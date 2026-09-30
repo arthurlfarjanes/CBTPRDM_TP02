@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.MainPage"
+             Title="Lista de Tarefas">
+
+    <Grid RowDefinitions="*, Auto" Padding="20">
+        <CollectionView x:Name="TarefasCollection" 
+                        SelectionMode="Single" 
+                        SelectionChanged="OnTarefaSelected"
+                        Grid.Row="0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Stroke="#CCCCCC" StrokeThickness="1" Margin="0,5" Padding="15">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8" />
+                        </Border.StrokeShape>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Titulo}" FontSize="18" FontAttributes="Bold" TextColor="#333333" />
+                            <Label Text="{Binding Descricao}" FontSize="14" TextColor="#666666" MaxLines="1" LineBreakMode="TailTruncation" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="+ Adicionar Nova Tarefa" 
+                Grid.Row="1" 
+                Margin="0,10,0,0" 
+                BackgroundColor="#0078D4" 
+                TextColor="White" 
+                FontAttributes="Bold" 
+                CornerRadius="8"
+                Clicked="OnAdicionarClicked" />
+    </Grid>
+</ContentPage>
