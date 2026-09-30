@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.CreditosPage"
+             BackgroundColor="#FAFAFA"
+             Title="Créditos do Projeto">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="20" VerticalOptions="Center">
+
+            <Label Text="👨‍💻 Autores" FontSize="28" FontAttributes="Bold" TextColor="#09090B" HorizontalOptions="Center" Margin="0,0,0,20" />
+
+            <Border Stroke="#E4E4E7" StrokeThickness="1" BackgroundColor="#FFFFFF" Padding="20">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Brush="#09090B" Offset="0,4" Radius="8" Opacity="0.05" />
+                </Border.Shadow>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="ADRIANO JÚNIOR DE SOUZA ALMEIDA" FontSize="16" FontAttributes="Bold" TextColor="#09090B" />
+                    <Label Text="Prontuário: CB3030644" FontSize="14" TextColor="#4338CA" FontAttributes="Bold" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Stroke="#E4E4E7" StrokeThickness="1" BackgroundColor="#FFFFFF" Padding="20">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Brush="#09090B" Offset="0,4" Radius="8" Opacity="0.05" />
+                </Border.Shadow>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="ARTHUR LANZILOTTI FARJANES" FontSize="16" FontAttributes="Bold" TextColor="#09090B" />
+                    <Label Text="Prontuário: CB3031306" FontSize="14" TextColor="#4338CA" FontAttributes="Bold" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="Trabalho Prático 02 - Análise e Desenvolvimento de Sistemas" FontSize="14" TextColor="#71717A" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,30,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

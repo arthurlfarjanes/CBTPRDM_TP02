@@ -2,31 +2,55 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TarefasApp.AddPage"
+             BackgroundColor="#FAFAFA"
              Title="Nova Tarefa">
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
-            <Label Text="Adicionar Nova Tarefa" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+        <VerticalStackLayout Padding="24" Spacing="20">
+            <Label Text="Nova Tarefa" FontSize="28" FontAttributes="Bold" TextColor="#4338CA" Margin="0,0,0,10" />
 
-            <Label Text="Título:" FontAttributes="Bold" />
-            <Entry x:Name="TituloEntry" Placeholder="Digite o título" />
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Título" FontSize="14" FontAttributes="Bold" TextColor="#3F3F46" />
+                <Border Stroke="#D4D4D8" StrokeThickness="1.5" BackgroundColor="#FFFFFF" Padding="12,0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+                    <Entry x:Name="TituloEntry" Placeholder="Digite o título da tarefa..." TextColor="#09090B" BackgroundColor="Transparent" />
+                </Border>
+            </VerticalStackLayout>
 
-            <Label Text="Descrição:" FontAttributes="Bold" />
-            <Editor x:Name="DescricaoEditor" Placeholder="Digite a descrição" HeightRequest="100" />
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Descrição" FontSize="14" FontAttributes="Bold" TextColor="#3F3F46" />
+                <Border Stroke="#D4D4D8" StrokeThickness="1.5" BackgroundColor="#FFFFFF" Padding="12,0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+                    <Editor x:Name="DescricaoEditor" Placeholder="Descreva os detalhes..." TextColor="#09090B" BackgroundColor="Transparent" HeightRequest="120" />
+                </Border>
+            </VerticalStackLayout>
 
-            <Label Text="Prioridade:" FontAttributes="Bold" />
-            <Picker x:Name="PrioridadePicker" Title="Selecione a Prioridade">
-                <Picker.Items>
-                    <x:String>Baixa</x:String>
-                    <x:String>Média</x:String>
-                    <x:String>Alta</x:String>
-                </Picker.Items>
-            </Picker>
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Prioridade" FontSize="14" FontAttributes="Bold" TextColor="#3F3F46" />
+                <Border Stroke="#D4D4D8" StrokeThickness="1.5" BackgroundColor="#FFFFFF" Padding="12,0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
 
-            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20" Margin="0,20,0,0">
-                <Button Text="Cancelar" BackgroundColor="Gray" Clicked="OnCancelarClicked" />
-                <Button Text="Salvar" BackgroundColor="#28A745" Clicked="OnSalvarClicked" />
-            </HorizontalStackLayout>
+                    <Picker x:Name="PrioridadePicker" TextColor="#09090B" BackgroundColor="Transparent">
+                        <Picker.Items>
+                            <x:String>Baixa</x:String>
+                            <x:String>Média</x:String>
+                            <x:String>Alta</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                </Border>
+            </VerticalStackLayout>
+
+            <Grid ColumnDefinitions="*, *" ColumnSpacing="16" Margin="0,30,0,0">
+                <Button Text="Cancelar" Grid.Column="0" BackgroundColor="#F4F4F5" TextColor="#3F3F46" BorderColor="#D4D4D8" BorderWidth="1" CornerRadius="12" HeightRequest="54" FontAttributes="Bold" Clicked="OnCancelarClicked" />
+                <Button Text="Salvar" Grid.Column="1" BackgroundColor="#4338CA" TextColor="#FFFFFF" CornerRadius="12" HeightRequest="54" FontAttributes="Bold" Clicked="OnSalvarClicked" />
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

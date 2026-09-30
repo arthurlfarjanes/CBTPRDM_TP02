@@ -4,11 +4,18 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TarefasApp"
-    Title="TarefasApp">
+    Shell.FlyoutBehavior="Disabled"
+    Shell.TabBarBackgroundColor="#FFFFFF"
+    Shell.TabBarTitleColor="#4338CA"
+    Shell.TabBarUnselectedColor="#A1A1AA">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="Tarefas">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+        <Tab Title="Créditos">
+            <ShellContent ContentTemplate="{DataTemplate local:CreditosPage}" />
+        </Tab>
+    </TabBar>
 
 </Shell>
